@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Projects | Neel Shah</title>
-    <link>https://neel-one.github.io/project/</link>
-      <atom:link href="https://neel-one.github.io/project/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://www.neelsh.com/project/</link>
+      <atom:link href="https://www.neelsh.com/project/index.xml" rel="self" type="application/rss+xml" />
     <description>Projects</description>
     <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>© 2021 Neel Shah</copyright>
     <image>
-      <url>https://neel-one.github.io/media/icon_hu337f5727b5aeac6b8bd1909f09b8c412_721_512x512_fill_lanczos_center_2.png</url>
+      <url>https://www.neelsh.com/media/icon_hu337f5727b5aeac6b8bd1909f09b8c412_721_512x512_fill_lanczos_center_2.png</url>
       <title>Projects</title>
-      <link>https://neel-one.github.io/project/</link>
+      <link>https://www.neelsh.com/project/</link>
     </image>
     
     <item>
       <title>Coming Soon</title>
-      <link>https://neel-one.github.io/project/comingsoon/</link>
+      <link>https://www.neelsh.com/project/comingsoon/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://neel-one.github.io/project/comingsoon/</guid>
+      <guid>https://www.neelsh.com/project/comingsoon/</guid>
       <description></description>
     </item>
     

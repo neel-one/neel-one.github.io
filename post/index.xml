@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts | Neel Shah</title>
-    <link>https://neel-one.github.io/post/</link>
-      <atom:link href="https://neel-one.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://www.neelsh.com/post/</link>
+      <atom:link href="https://www.neelsh.com/post/index.xml" rel="self" type="application/rss+xml" />
     <description>Posts</description>
     <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>© 2021 Neel Shah</copyright><lastBuildDate>Mon, 23 Aug 2021 22:46:15 -0400</lastBuildDate>
     <image>
-      <url>https://neel-one.github.io/media/icon_hu337f5727b5aeac6b8bd1909f09b8c412_721_512x512_fill_lanczos_center_2.png</url>
+      <url>https://www.neelsh.com/media/icon_hu337f5727b5aeac6b8bd1909f09b8c412_721_512x512_fill_lanczos_center_2.png</url>
       <title>Posts</title>
-      <link>https://neel-one.github.io/post/</link>
+      <link>https://www.neelsh.com/post/</link>
     </image>
     
     <item>
       <title>Creating Pokemon AI</title>
-      <link>https://neel-one.github.io/post/reflections-pokerl/</link>
+      <link>https://www.neelsh.com/post/reflections-pokerl/</link>
       <pubDate>Mon, 23 Aug 2021 22:46:15 -0400</pubDate>
-      <guid>https://neel-one.github.io/post/reflections-pokerl/</guid>
+      <guid>https://www.neelsh.com/post/reflections-pokerl/</guid>
       <description>&lt;h1 id=&#34;intro&#34;&gt;Intro&lt;/h1&gt;
 &lt;p&gt;During the Winter 2021 semester, I decided to lead a project team within &lt;a href=&#34;https://www.mdst.club/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Michigan Data Science Team&lt;/a&gt;. Overall, I think the project was successful; each team generated interesting results. Many enjoyed the project, tackled each work session with dedication, and finished the project with newfound knowledge. This experience was highly valuable to me and taught me to become a better project lead.&lt;/p&gt;
 &lt;p&gt;Usually, MDST projects follow a traditional &amp;lsquo;data science&amp;rsquo; workflow: develop an objective, create/find a meaningful dataset, understand the data, build a model, analyze model&amp;rsquo;s performance on objective, and iterate.&lt;/p&gt;
@@ -96,9 +96,9 @@ From a human perspective, we can see mistakes that agents are making. These mist
     
     <item>
       <title>First University Research Project</title>
-      <link>https://neel-one.github.io/post/first-university-research/</link>
+      <link>https://www.neelsh.com/post/first-university-research/</link>
       <pubDate>Fri, 14 May 2021 16:05:28 -0400</pubDate>
-      <guid>https://neel-one.github.io/post/first-university-research/</guid>
+      <guid>https://www.neelsh.com/post/first-university-research/</guid>
       <description>&lt;p&gt;In May 2018, I was wrapping up my junior year in high school with not much to do in the summer. At that time, I was particularly interested in materials science and mechanical engineering and thought I wanted to pursue a career in one of those fields. I also had an slight interest in research having worked on two Science Fair projects and taken a research techniques mini-course. I decided to approach some mechanical engineering professors at a nearny University with those two interests in mind.&lt;/p&gt;
 &lt;p&gt;Most professors I contacted ghosted me, but &lt;a href=&#34;https://mabe.utk.edu/people/peng-zhao/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;one&lt;/a&gt; decided to meet with me. He mentioned two potential topics of interest: chemical combustion graph analysis and machine learning based predictive models for combustion properties. As I had no knowledge of any part of either topic, I spent the next few weeks reviewing materials and looking through a set of 10 papers that he sent me.&lt;/p&gt;
 &lt;p&gt;One paper, &lt;a href=&#34;https://www.nature.com/articles/nature25978&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Planning chemical syntheses with deep neural networks and symbolic AI&lt;/a&gt; by Segler et al., particularly caught my eye. I spent near a week trying to understand the paper with no success whatsoever. But the mountains of information I came across while learning piqued my curiosity in machine learning as a lot of technical details aligned with my academic skills and interests. Fun fact: the creator of one &lt;a href=&#34;http://badmephisto.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;site&lt;/a&gt; that I printed out Rubik&amp;rsquo;s cube techniques for back in 2011 happened to teach a popular deep learning course, &lt;a href=&#34;http://cs231n.stanford.edu/2016/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CS231n&lt;/a&gt;, and now works on &lt;a href=&#34;https://karpathy.ai/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;cool autopilot stuff at Tesla&lt;/a&gt;.&lt;/p&gt;
