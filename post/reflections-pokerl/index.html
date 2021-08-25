@@ -1,0 +1,1144 @@
+<!DOCTYPE html><html lang="en-us" >
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  
+  
+    <meta name="generator" content="Wowchemy 5.1.0 for Hugo" />
+  
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Neel Shah" />
+
+  
+  
+  
+    
+  
+  <meta name="description" content="Pokemon Reinforcement Learning: thoughts from a project leader perspective" />
+
+  
+  <link rel="alternate" hreflang="en-us" href="/post/reflections-pokerl/" />
+
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+
+  
+  
+  
+    <meta name="theme-color" content="#1565c0" />
+  
+
+  
+  
+    
+    <script src="/js/mathjax-config.js"></script>
+  
+
+  
+  
+  
+  
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css" integrity="sha512-W4yqoT1+8NLkinBLBZko+dFB2ZbHsYLDdr50VElllRcNt2Q4/GSs6u71UHKxB7S6JEMCp5Ve4xjh3eGQl/HRvg==" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin="anonymous">
+
+    
+    
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/github.min.css" crossorigin="anonymous" title="hl-light" media="print" onload="this.media='all'">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" media="print" onload="this.media='all'" disabled>
+        
+      
+    
+
+    
+    
+    
+
+    
+
+    
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+  
+
+  
+  
+  
+    
+      
+      <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap" media="print" onload="this.media='all'">
+    
+  
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/wowchemy.d352920a30b0d11fb8c727d5fc7d0978.css" />
+
+  
+
+
+
+  
+
+  
+
+  
+
+
+
+
+  
+  
+  
+
+  
+
+  
+    <link rel="manifest" href="/index.webmanifest" />
+  
+
+  <link rel="icon" type="image/png" href="/media/icon_hu337f5727b5aeac6b8bd1909f09b8c412_721_32x32_fill_lanczos_center_2.png" />
+  <link rel="apple-touch-icon" type="image/png" href="/media/icon_hu337f5727b5aeac6b8bd1909f09b8c412_721_180x180_fill_lanczos_center_2.png" />
+
+  <link rel="canonical" href="/post/reflections-pokerl/" />
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+  
+  
+  <meta property="twitter:card" content="summary_large_image" />
+  
+  <meta property="og:site_name" content="Neel Shah" />
+  <meta property="og:url" content="/post/reflections-pokerl/" />
+  <meta property="og:title" content="Creating Pokemon AI | Neel Shah" />
+  <meta property="og:description" content="Pokemon Reinforcement Learning: thoughts from a project leader perspective" /><meta property="og:image" content="/post/reflections-pokerl/featured.png" />
+    <meta property="twitter:image" content="/post/reflections-pokerl/featured.png" /><meta property="og:locale" content="en-us" />
+  
+    
+      <meta
+        property="article:published_time"
+        content="2021-08-23T22:46:15-04:00"
+      />
+    
+    <meta property="article:modified_time" content="2021-08-23T22:46:15-04:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "/post/reflections-pokerl/"
+  },
+  "headline": "Creating Pokemon AI",
+  
+  "image": [
+    "/post/reflections-pokerl/featured.png"
+  ],
+  
+  "datePublished": "2021-08-23T22:46:15-04:00",
+  "dateModified": "2021-08-23T22:46:15-04:00",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Neel Shah"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Neel Shah",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "/media/icon_hu337f5727b5aeac6b8bd1909f09b8c412_721_192x192_fill_lanczos_center_2.png"
+    }
+  },
+  "description": "Pokemon Reinforcement Learning: thoughts from a project leader perspective"
+}
+</script>
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+  <title>Creating Pokemon AI | Neel Shah</title>
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="e85a169fcd445686e8ee2bcd0a562a48" >
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <script src="/js/wowchemy-init.min.82a2df885514d7a8250a5a85f0335ab9.js"></script>
+
+  
+
+
+<aside class="search-modal" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#" aria-label="Close"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control"
+        aria-label="Search...">
+        
+      </div>
+
+      
+      
+
+      
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+
+  <div class="page-header">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container-xl">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/">Neel Shah</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Neel Shah</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#about"><span>Home</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#experience"><span>Experience</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#posts"><span>Posts</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#contact"><span>Contact</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+
+      
+      
+        
+      
+
+      
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#" aria-label="Search"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+      
+      <li class="nav-item dropdown theme-dropdown">
+        <a href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-label="Display preferences">
+          <i class="fas fa-moon" aria-hidden="true"></i>
+        </a>
+        <div class="dropdown-menu">
+          <a href="#" class="dropdown-item js-set-theme-light">
+            <span>Light</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-dark">
+            <span>Dark</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-auto">
+            <span>Automatic</span>
+          </a>
+        </div>
+      </li>
+      
+
+      
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+  </div>
+
+  <div class="page-body">
+    <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1>Creating Pokemon AI</h1>
+
+  
+  <p class="page-subtitle">Recap and Reflection of a Pokemon Reinforcement Learning project from a project leader perspective</p>
+  
+
+  
+    
+
+
+<div class="article-metadata">
+
+  
+  
+  
+  
+  <div>
+    
+
+  <span >
+      Neel Shah</span>
+  </div>
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    Aug 23, 2021
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    8 min read
+  </span>
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+  
+
+</div>
+
+    
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      <h1 id="intro">Intro</h1>
+<p>During the Winter 2021 semester, I decided to lead a project team within <a href="https://www.mdst.club/" target="_blank" rel="noopener">Michigan Data Science Team</a>. Overall, I think the project was successful; each team generated interesting results. Many enjoyed the project, tackled each work session with dedication, and finished the project with newfound knowledge. This experience was highly valuable to me and taught me to become a better project lead.</p>
+<p>Usually, MDST projects follow a traditional &lsquo;data science&rsquo; workflow: develop an objective, create/find a meaningful dataset, understand the data, build a model, analyze model&rsquo;s performance on objective, and iterate.</p>
+<p>I opted to try a non-traditional, exploratory topic: Reinforcement Learning. Specifically, I tasked my team to try to create AI for a game called <a href="https://pokemonshowdown.com/" target="_blank" rel="noopener">Pokemon Showdown</a>, which I will call Showdown for the rest of this post.</p>
+<h1 id="motivation">Motivation</h1>
+<p>Quite a few reasons compelled me to choose Showdown over other games. First, Showdown is a fairly popular online game with around 15,000 users online at a given time. We can also test AI agents against real people using the <a href="https://en.wikipedia.org/wiki/Elo_rating_system" target="_blank" rel="noopener">ELO system</a>. Second, Showdown is an open, unstudied game unlike chess, tetris, or poker. I didn&rsquo;t want students copying from other literature to encourage fresh ideas unique to Showdown. Third, Showdown is open source and a <a href="http://poke-env.readthedocs.io" target="_blank" rel="noopener">Python library</a> exists to interact with the website (both prod and local versions) to create AI agents. Lastly, Showdown is a zero-sum two-player imperfect information game. What does this mean? Showdown games have two players where only one wins. Players in a Showdown game do not have knowledge of the full state of the game (e.g. a player doesn&rsquo;t know data about their opponent&rsquo;s Pokemon). The search space of each game is effectively infinite with hidden branches (each move has an element of randomness associated with it, and we do not know which moves the opponent has), so a tree search based algorithm such as MCTS in AlphaGo doesn&rsquo;t quite make sense. I liked the idea of a balance between chess (two-player, zero-sum) and poker (imperfect information). Regarding project feasibility, I felt that (without proof) Showdown RL algorithms have a much lower computational necessity than say the $35 billion price tag of AlphaGo. I am still not sure about the last point, but I can say for a fact that using Google Colab&rsquo;s free resources is definitely <strong>not</strong> enough!</p>
+<h1 id="team">Team</h1>
+<p>PokeRL had around 10 members, ranging from freshmen who had just learned to code to a PhD student with published research and graduate machine learning courses under his belt. As I hoped for each student to have a meaningful project experience while learning knew material, setting expectations and developing educational material/lectures was challenging for me.</p>
+<p>I surveyed each member and partitioned teams based on interest, experience, and algorithms that they wished to explore. I challenged teams to create the best AI that they could to be evaluated against other teams on the last session - <em>gameday</em>. Three teams were formed, self-named Elite4, Virn, Solo Pokemon. I thought I could be my own team, but I (mistakenly) underestimated the time overhead of running the project, helping teams debug, discussing algorithmic details/implementation, and teaching general software/machine learning skills.</p>
+<p>We met weekly on Sunday from 11am-2pm for seven weeks during the semester. Initially, I thought to split up each session with a 1 hour combined lecture and a 2 hour team work period. However, by the third session, I decided to shorten or cut out the lecture. I realized that the experience level of the members were on the lower end with most members fairly new programmers and with not as many math/cs courses under their belts. Once I understood this, I decided to shorten each lecture and focus on less technical details. I spent the gained time talking to individual groups and teaching/explaining a topic that they were interested in or were struggling to apply to their project. For students with more experience or interest in technical details, I individually explored relevant topics.</p>
+<h1 id="set-up">Set Up</h1>
+<p>To kickstart each team, I provided each team with starter code with instructions to run and a greedy agent implementation, a simple DQN agent implementation (from the official documentation), and a tf/keras modelled player interface.</p>
+<p>Initially, I anticipated members to run their code locally. Instead, some were met with technical difficulties. As some of those people were less experienced, we lost valuable project session time helping them debug. I felt bad - the inability to set up is frustrating, and the student would feel less motivated, especially during a long three hour work session. This mistake on my part cost us limited productivity hours before I decided to shift everything to Google Colab. The migration was not so simple because I had to figure out how to run a local server within Colab (games are player through a socket connection to a local Showdown server). These issues would have never happened if I had been more proactive in my project preparation.</p>
+<h1 id="algorithms">Algorithms</h1>
+<p>As a baseline model, I created a greedy agent who is (almost) guaranteed to make a move that deals the most damage to the opponent&rsquo;s current Pokemon. The greedy agent hovers slightly above 1000 ELO, the default player ELO, when deployed to the official Showdown server.</p>
+<p>Solo Pokemon and Virn developed unique heuristic, rule-based algorithms. Elite4 decided to try a neural network powered reinforcement learning algorithm.</p>
+<h3 id="solo-pokemon">Solo Pokemon</h3>
+<p>Solo Pokemon&rsquo;s algorithm attempted to determine whether to play a greedy move, switch to another Pokemon (at the beginning of each game, players start with six Pokemon), or dynamax (a feature unique to the specific game-mode in Showdown). If the current Pokemon had a unfavorable speed, a type disadvantage, and high probability of fainting (when the Pokemon is unusable for the rest of the game) based on its current health and defense stats, Solo Pokemon opted to switch into another Pokemon. Dynamax was determined based on the alive Pokemon in their party, a strong type advantage, and the base stats of the current Pokemon. In all other cases, Solo Pokemon chose a greedy move.</p>
+<h3 id="virn">Virn</h3>
+<p>Virn had a simple but effective approach. If the current Pokemon had the best move against the opponent Pokemon, then the current Pokemon would use that move, dynamaxing if the move was super affective (favorable type advantage). Otherwise, switch to the Pokemon on the bench with the best move.</p>
+<p>I think it is interesting to note that Solo Pokemon and Virn calculated the best move differently, although I won&rsquo;t go into specific details as they require a bit more knowledge about the game.</p>
+<h3 id="elite4">Elite4</h3>
+<p>Elite4 used Deep Q-Learning with Experience Replay with Double DQN. More information about exact details can be found here: <a href="https://arxiv.org/pdf/1312.5602.pdf" target="_blank" rel="noopener">DQN paper</a>, <a href="https://arxiv.org/pdf/1509.06461.pdf" target="_blank" rel="noopener">Double DQN paper</a>,  <a href="https://github.com/keras-rl/keras-rl/blob/216c3145f3dc4d17877be26ca2185ce7db462bad/rl/agents/dqn.py" target="_blank" rel="noopener">library implementation</a>. This algorithm is fairly well documented and implemented, allowing the team to spend their time to experiment state vectorization, network architecture, reward calculation, opponent selection, and more. I doubt DQN is near an optimal approach to this problem, but I think DQN is a very solid choice of algorithm for a weekly, semester long team project #with less experienced students. I found it easier to build an intuition for this algorithm for those interested. Elite4 experimented with different ways to represent state based off the data given from the environment, settling on a state vector with 21 components combining Pokemon types, move powers and multipliers, statuses, and dynamax ability. They experimented with ways to represent reward and model architectures, settling on one with 7000 parameters. The model&rsquo;s input is a state array and output is an array of action probabilities for 22 possible actions. I do not recall the exact values they used for parameters such as $\epsilon$ for the $\epsilon$-greedy policy, experience replay memory size, $\gamma$ for reward discount factor, among other tunable parameters.</p>
+<p>To train, Elite4 first trained their model through battles against the greedy agent until they had a ~60% win rate. Then, Elite4 trained against an opponent with a fixed snapshot of its model, periodically updating the opponent&rsquo;s model if the current model consistently beat the opponent. The team attempted to train on Colab, but their methods were still too time consuming and computationally intensive for reaching satisfactory results. Nevertheless, they attained a model trained for about 15 hours.</p>
+<h1 id="results">Results</h1>
+<p>Against the greedy agent, Solo Pokemon and Virn claimed a 75% win rate, while Elite4 had a 65% win rate.</p>
+<p>The table below shows results of a round robin tournament between the three teams.</p>
+<p><strong>Games won out of 1000, row represents challenger, column represents opponent</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Solo Pokemon</th>
+<th>Virn</th>
+<th>Elite4</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Solo Pokemon</strong></td>
+<td>-</td>
+<td>451</td>
+<td>596</td>
+</tr>
+<tr>
+<td><strong>Virn</strong></td>
+<td>549</td>
+<td>-</td>
+<td>656</td>
+</tr>
+<tr>
+<td><strong>Elite4</strong></td>
+<td>404</td>
+<td>344</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<p>I thought it was cool battles were quite fair - no team was completely wiped/wiped other teams. I was suprised by Elite4&rsquo;s relatively formidable results, despite the difficulties in training and challenges that the team faced throughout the semester.
+With current approaches, Virn is the winner of MDST PokeRL with 55% win rate over Solo Pokemon and a 65% win rate over Elite4!</p>
+<p>Below you can watch one battle between each team.</p>
+<iframe 
+src="Gen8RandomBattle-2021-04-10-teamsolopokemon-elite4rl copy.html" width="100%" height="500px">
+</iframe>
+<iframe 
+src="Gen8RandomBattle-2021-04-10-teamsolopokemon-virnstrategy.html" width="100%" height="500px">
+</iframe>
+<iframe 
+src="Gen8RandomBattle-2021-04-10-virnstrategy-elite4rl-2.html" width="100%" height="500px">
+</iframe>
+From a human perspective, we can see mistakes that agents are making. These mistakes are generally easier to fix for heuristic based agents but not so simple for an RL trained agent.
+<h1 id="further-work">Further Work</h1>
+<p>I mentioned above that I was also interested in creating my own RL agent with a more sophisticated model and algorithm selection and training based on my knowledge. Although I did not have time in the semester due to my position, I decided to tackle this problem afterwards. Due to my internship I didn&rsquo;t have much time to work, but I am gaining progress in my approach. My current results are not in a presentable state, but I will update this post in the future with results. I aim to get as good of an AI as possible with a solid ELO rating and acceptable performance against most active users on Showdown.</p>
+<p>If you want updates, feel free to contact me and ask!</p>
+
+    </div>
+
+    
+
+
+
+
+
+
+
+
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=/post/reflections-pokerl/&amp;text=Creating%20Pokemon%20AI" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=/post/reflections-pokerl/&amp;t=Creating%20Pokemon%20AI" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=Creating%20Pokemon%20AI&amp;body=/post/reflections-pokerl/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=/post/reflections-pokerl/&amp;title=Creating%20Pokemon%20AI" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="whatsapp://send?text=Creating%20Pokemon%20AI%20/post/reflections-pokerl/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=/post/reflections-pokerl/&amp;title=Creating%20Pokemon%20AI" target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+  </div>
+</article>
+  </div>
+
+  <div class="page-footer">
+    
+    
+    <div class="container">
+      <footer class="site-footer">
+
+  
+
+  
+
+  <p class="powered-by">
+    © 2021 Neel Shah
+  </p>
+
+  
+  
+
+
+
+
+
+
+  <p class="powered-by">
+    
+    
+    
+      
+      
+      
+      
+      
+      
+      Published with <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a> — the free, <a href="https://github.com/wowchemy/wowchemy-hugo-modules" target="_blank" rel="noopener">open source</a> website builder that empowers creators.
+    
+  </p>
+</footer>
+
+    </div>
+    
+  </div>
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.1.0/instantpage.min.js" integrity="sha512-1+qUtKoh9XZW7j+6LhRMAyOrgSQKenQ4mluTR+cvxXjP1Z54RxZuzstR/H9kgPXQsVB8IW7DMDFUJpzLjvhGSQ==" crossorigin="anonymous"></script>
+
+      
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      
+
+      
+      
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js" integrity="sha512-TDKKr+IvoqZnPzc3l35hdjpHD0m+b2EC2SrLEgKDRWpxf2rFCxemkgvJ5kfU48ip+Y+m2XVKyOCD85ybtlZDmw==" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/r.min.js"></script>
+        
+      
+
+    
+
+    
+    
+    
+
+    
+    
+
+    
+    
+    
+      
+      <script id="search-hit-fuse-template" type="text/x-template">
+        <div class="search-hit" id="summary-{{key}}">
+          <div class="search-hit-content">
+            <div class="search-hit-name">
+              <a href="{{relpermalink}}">{{title}}</a>
+              <div class="article-metadata search-hit-type">{{type}}</div>
+              <p class="search-hit-description">{{snippet}}</p>
+            </div>
+          </div>
+        </div>
+      </script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+      
+    
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    <script src="/js/bootstrap.bundle.min.6aed84840afc03ab4d5750157f69c120.js"></script>
+
+    
+    
+      
+      
+      
+      
+      
+      
+      
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+      
+      
+    
+    
+    <script src="/en/js/wowchemy.min.0ec27d544fa14954a0166fde0a7ce919.js"></script>
+
+    
+
+
+
+
+
+
+</body>
+</html>
